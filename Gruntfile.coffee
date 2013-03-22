@@ -45,14 +45,33 @@ module.exports = (grunt) ->
                 dest: 'release/css/jamie.css'
 
 
+        # Coffee
+
+        coffee:
+
+            build:
+                options:
+                    sourceMap: true
+                files: [{
+                    expand: true,
+                    cwd: '<%= site.source %>/coffee/',
+                    src: '**/*.coffee',
+                    dest: 'build/js/',
+                    ext: '.js'
+                }]
+
+
         # Copy
 
         copy:
 
             build:
-                files: [
-                    { expand: true, cwd: 'components/', src: '**/*.js', dest: 'build/js/libs/' }
-                ]
+                files: [{
+                    expand: true,
+                    cwd: 'components/',
+                    src: '**/*.js',
+                    dest: 'build/js/libs/'
+                }]
 
 
         # Replace
@@ -91,7 +110,17 @@ module.exports = (grunt) ->
 
     @loadNpmTasks dep for dep in matchdep.filterDev('grunt-*')
 
+    # Tasks
+
+    @registerTask 'default', ['build']
+
+    @registerTask 'build', ['clean', 'less', 'coffee', 'copy', 'replace', 'info:build']
+
     # Custom
 
-    @registerTask 'coffee', 'Compile CoffeeScript withs source maps', ->
-        execSync.stdout "coffee -o build/js/ -cmb #{grunt.config('site').source}/coffee/"
+    @registerTask 'info', (target='release') ->
+
+        grunt.log.subhead 'Build Info:'
+        grunt.log.oklns execSync.stdout('du -h -d 3 ' + target).replace(new RegExp(target + '\/', 'g'), '')
+
+

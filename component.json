@@ -4,7 +4,7 @@
   "main": "release/js/jamie.js",
   "dependencies": {
     "jquery": "~1.9.1",
-    "Coffee-Physics": "~b350023803764a61b66283f9e3cf89cd61729dbf",
+    "Coffee-Physics": "jrolfs/Coffee-Physics",
     "requirejs": "~2.1.5"
   },
   "ignore": [
@@ -13,6 +13,7 @@
     "components"
   ],
   "devDependencies": {
-    "backbone": "~1.0.0"
+    "backbone": "~1.0.0",
+    "underscore": "~1.4.4"
   }
 }
