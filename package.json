@@ -1,0 +1,33 @@
+{
+  "name": "jamie-rolfs",
+  "version": "0.0.1",
+  "description": "My personal site.",
+  "main": "release/index.html",
+  "dependencies": {
+    "execSync": "~0.0.3",
+    "grunt": "~0.4.1",
+    "matchdep": "~0.1.1",
+    "requirejs": "~2.1.5"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "matchdep": "~0.1.1",
+    "execSync": "0.0.3",
+    "grunt-contrib-less": "~0.5.0",
+    "almond": "~0.2.5",
+    "grunt-replace": "~0.4.0",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt-contrib-clean": "~0.4.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jrolfs/site.git"
+  },
+  "author": "Jamie Rolfs",
+  "license": "BSD",
+  "gitHead": "52fad1502910669e726f1fc96cce052c69657c9a",
+  "readmeFilename": "README.md"
+}
