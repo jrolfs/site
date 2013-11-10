@@ -175,12 +175,12 @@ module.exports = (grunt) ->
     @registerTask 'build', (target = 'build') ->
 
         list = [
-                'clean:' + target,
-                'copy:' + target,
-                'less:' + target,
-                'coffee:' + target,
-                'replace:' + target
-            ]
+            'clean:' + target,
+            'copy:' + target,
+            'less:' + target,
+            'coffee:' + target,
+            'replace:' + target
+        ]
 
         list.push 'info:build' unless target is 'release'
 
