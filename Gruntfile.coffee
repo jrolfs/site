@@ -39,7 +39,7 @@ module.exports = (grunt) ->
             build:
                 files: [{
                     expand: true,
-                    cwd: 'components/',
+                    cwd: 'bower_components/',
                     src: '**/*.js',
                     dest: 'build/js/libs/'
                 }]
@@ -47,7 +47,7 @@ module.exports = (grunt) ->
             release:
                 files: [{
                     expand: true,
-                    cwd: 'components/',
+                    cwd: 'bower_components/',
                     src: '**/*.js',
                     dest: '.tmp/js/libs/'
                 }]
@@ -140,7 +140,7 @@ module.exports = (grunt) ->
         watch:
 
             components:
-                files: 'components/**/*.js',
+                files: 'bower_components/**/*.js',
                 tasks: ['copy:build']
 
             less:
@@ -164,8 +164,6 @@ module.exports = (grunt) ->
     # Plugins
 
     @loadNpmTasks dep for dep in matchdep.filterDev('grunt-*')
-
-    @renameTask 'regarde', 'watch'
 
 
     # Tasks
