@@ -20,7 +20,7 @@ define [
     #
 
     initialize: ->
-      @listenTo(AppModel.get(), 'change:view', @onViewChange)
+      @listenTo(AppModel.instance(), 'change:view', @onViewChange)
 
 
 
@@ -29,4 +29,4 @@ define [
     #
 
     onViewChange: (model, view) ->
-
+      console.log 'view'

@@ -4,7 +4,7 @@ define [], ->
 
     instance = null
 
-    @get: ->
+    @instance: ->
       instance ?= new AppModel()
 
     @class: ->
@@ -29,3 +29,4 @@ define [], ->
 
       constructor: ->
         throw 'Attempt to re-instantiate singleton' if instance
+        super
