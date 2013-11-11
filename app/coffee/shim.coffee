@@ -2,7 +2,7 @@ define ->
   writes = []
   plugin =
     load: (name, req, load, config) ->
-      shims = config.shim && Object.keys(config.shim)
+      shims = config.shim and Object.keys(config.shim)
 
       if config.isBuild
         fs = require.nodeRequire('fs');
@@ -14,5 +14,4 @@ define ->
           load value
 
     write: (plugin, module, write) ->
-      console.log writes.join('\n')
       write writes.join(' ')
