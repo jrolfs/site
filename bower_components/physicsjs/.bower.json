@@ -1,0 +1,26 @@
+{
+  "name": "PhysicsJS",
+  "homepage": "http://wellcaffeinated.net/PhysicsJS/",
+  "description": "A modular, extendable, and easy-to-use physics engine for javascript",
+  "main": "dist/physicsjs-full-0.5.1.js",
+  "authors": [
+    "Jasper Palfree"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "b1187d88b8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "bower-support",
+    "commit": "b1187d88b8cc081c75df586ade16fe7b8e699e0b"
+  },
+  "_source": "git://github.com/jrolfs/PhysicsJS.git",
+  "_target": "bower-support",
+  "_originalSource": "jrolfs/PhysicsJS"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "jamie-rolfs",
+  "version": "0.0.1",
+  "main": "release/js/jamie.js",
+  "dependencies": {},
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "devDependencies": {
+    "jquery": "~2.0.3",
+    "requirejs": "~2.1.9",
+    "backbone": "~1.1.0",
+    "underscore": "~1.5.2",
+    "handlebars": "~1.1.2",
+    "physicsjs": "jrolfs/PhysicsJS#bower-support"
+  }
+}
