@@ -1,8 +1,8 @@
 define [
-	'jr/control/Router'
+	'jr/control/AppRouter'
 ],
 
-(Router) ->
+(AppRouter) ->
 
   init: ->
-    new Router
+    new AppRouter()
