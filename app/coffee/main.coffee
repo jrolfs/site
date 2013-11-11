@@ -1,12 +1,5 @@
-require.config
-  paths:
-    'jquery': 'libs/jquery/jquery'
-    'underscore': 'libs/underscore/underscore'
-    'backbone': 'libs/backbone/backbone',
-    'physicsjs': 'libs/physicsjs/dist/physicsjs-full-0.5.1'
-
-  shim:
-    jquery:
+shim =
+  jquery:
       exports: '$'
     underscore:
       exports: '_'
@@ -17,5 +10,15 @@ require.config
       exports: 'Physics'
 
 
-require ['jr/App', 'jquery'], (app) ->
+require.config
+  paths:
+    'jquery': 'libs/jquery/jquery'
+    'underscore': 'libs/underscore/underscore'
+    'backbone': 'libs/backbone/backbone',
+    'physicsjs': 'libs/physicsjs/dist/physicsjs-full-0.5.1'
+
+  shim: shim
+
+
+require ['jr/App'].concat(Object.keys shim), (app) ->
   do app.init
