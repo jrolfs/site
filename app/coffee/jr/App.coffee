@@ -1,5 +1,4 @@
 define [], ->
 
-    init: ->
-
-        console.log 'init'
+  init: ->
+    console.log 'init'
