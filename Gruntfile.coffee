@@ -104,7 +104,8 @@ module.exports = (grunt) ->
                     name: '../../node_modules/almond/almond'
                     include: 'main'
                     out: 'release/js/jamie.js'
-                    wrap: true
+                    wrap: true,
+                    findNestedDependencies: true,
                     optimize: if @option 'uncompressed' then 'none' else 'uglify2'
 
 
