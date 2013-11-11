@@ -6,19 +6,20 @@ shim =
     backbone:
       deps: ['jquery', 'underscore']
       exports: 'Backbone'
-    physicsjs:
-      exports: 'Physics'
 
 
 require.config
   paths:
+    # Shim
     'jquery': 'libs/jquery/jquery'
     'underscore': 'libs/underscore/underscore'
     'backbone': 'libs/backbone/backbone',
-    'physicsjs': 'libs/physicsjs/dist/physicsjs-full-0.5.1'
+
+    # AMD
+    'vendor/Physics': 'libs/physicsjs/dist/physicsjs-full-0.5.1'
 
   shim: shim
 
 
-require ['jr/App'].concat(Object.keys shim), (app) ->
-  do app.init
+require Object.keys(shim), ->
+  require ['jr/App'], (app) -> do app.init

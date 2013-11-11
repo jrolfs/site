@@ -1,4 +1,8 @@
-define [], ->
+define [
+	'jr/control/Router'
+],
+
+(Router) ->
 
   init: ->
-    console.log 'init'
+    new Router
