@@ -3,7 +3,7 @@ define [
   'jr/view/AppView'
 ],
 
-(AppModel, ApplView) ->
+(AppModel, AppView) ->
 
   class AppRouter extends Backbone.Router
 
@@ -21,7 +21,7 @@ define [
     #
 
     initialize: ->
-      new ApplView().setElement document.body
+      new AppView().setElement document.body
 
 
 
