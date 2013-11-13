@@ -1,5 +1,6 @@
 sh =  require 'execSync'
 matchdep =  require 'matchdep'
+pushState = require('grunt-connect-pushstate/lib/utils').pushState
 
 
 module.exports = (grunt) ->
@@ -42,6 +43,11 @@ module.exports = (grunt) ->
           cwd: 'bower_components/',
           src: '**/*.js',
           dest: 'build/js/libs/'
+        }, {
+          expand: true,
+          cwd: 'app/',
+          src: '**/*.coffee',
+          dest: 'build/app/'
         }]
 
       release:
@@ -136,6 +142,22 @@ module.exports = (grunt) ->
         dest: 'release/index.html'
 
 
+    # Connect
+
+    connect:
+      development:
+        options:
+          port: 8000
+          base: if @option 'release' then 'release' else 'build'
+          keepalive: true
+          livereload: !@option 'release'
+          middleware: (connect, options) -> [
+            pushState,
+            connect.static options.base
+          ]
+
+
+
     # Watch
 
     watch:
@@ -150,11 +172,16 @@ module.exports = (grunt) ->
 
       coffee:
         files: '<%= site.source %>/coffee/**/*.coffee',
-        tasks: ['coffee:build']
+        tasks: ['coffee:build', 'copy:build']
 
       index:
         files: '<%= site.source %>/dev.html',
         tasks: ['replace:build']
+
+      livereload:
+        files: ['build/css/*.css']
+        options:
+          livereload: true
 
 
 

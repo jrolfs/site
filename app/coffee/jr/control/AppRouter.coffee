@@ -12,7 +12,8 @@ define [
     #
 
     routes:
-      '': 'index'
+      '':       'index'
+      'about':  'about'
 
 
 
@@ -23,6 +24,9 @@ define [
     initialize: ->
       new AppView().setElement document.body
 
+      Backbone.history.start
+        pushState: true
+
 
 
     #
@@ -30,4 +34,7 @@ define [
     #
 
     index: ->
+      console.log 'index'
 
+    about: ->
+      console.log 'about'
