@@ -9,7 +9,7 @@ define ->
         for shim in shims
           writes.push fs.readFileSync(req.toUrl(shim) + '.js', 'utf8')
         load()
-      else if config.shim
+      else if shims
         req shims, (value) ->
           load value
 
