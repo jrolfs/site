@@ -42,7 +42,7 @@ module.exports = (grunt) ->
           expand: true,
           cwd: 'bower_components/',
           src: '**/*.js',
-          dest: 'build/js/libs/'
+          dest: 'build/js/vendor/'
         }, {
           expand: true,
           cwd: 'app/',
@@ -55,7 +55,7 @@ module.exports = (grunt) ->
           expand: true,
           cwd: 'bower_components/',
           src: '**/*.js',
-          dest: '.tmp/js/libs/'
+          dest: '.tmp/js/vendor/'
         }]
 
 

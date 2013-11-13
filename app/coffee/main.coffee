@@ -1,12 +1,12 @@
 require.config
   paths:
     # Shim
-    'jquery': 'libs/jquery/jquery'
-    'underscore': 'libs/underscore/underscore'
-    'backbone': 'libs/backbone/backbone',
+    'jquery': 'vendor/jquery/jquery'
+    'underscore': 'vendor/underscore/underscore'
+    'backbone': 'vendor/backbone/backbone',
 
     # AMD
-    'vendor/Physics': 'libs/physicsjs/dist/physicsjs-full-0.5.1'
+    'vendor/Physics': 'vendor/physicsjs/dist/physicsjs-full-0.5.1'
 
   shim:
     jquery:
