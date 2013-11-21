@@ -39,22 +39,22 @@ module.exports = (grunt) ->
 
       build:
         files: [{
-          expand: true,
-          cwd: 'bower_components/',
-          src: '**/*.js',
+          expand: true
+          cwd: 'bower_components/'
+          src: '**/*.js'
           dest: 'build/js/vendor/'
         }, {
-          expand: true,
-          cwd: 'app/',
-          src: '**/*.coffee',
+          expand: true
+          cwd: 'app/'
+          src: '**/*.coffee'
           dest: 'build/app/'
         }]
 
       release:
         files: [{
-          expand: true,
-          cwd: 'bower_components/',
-          src: '**/*.js',
+          expand: true
+          cwd: 'bower_components/'
+          src: '**/*.js'
           dest: '.tmp/js/vendor/'
         }]
 
@@ -74,6 +74,36 @@ module.exports = (grunt) ->
         dest: 'release/css/jamie.css'
 
 
+    # Handlebars
+
+    handlebars:
+
+      build:
+        options:
+          amd: true
+          namespace: false
+        files: [{
+          expand: true
+          cwd: 'app/templates/'
+          src: '**/*.handlebars'
+          dest: 'build/templates/'
+          ext: '.handlebars.js'
+        }]
+
+      release:
+        options:
+          amd: true
+          namespace: false
+        files: [{
+          expand: true
+          cwd: 'app/templates/'
+          src: '**/*.handlebars'
+          dest: '.tmp/templates/'
+          ext: '.handlebars.js'
+        }]
+
+
+
     # Coffee
 
     coffee:
@@ -82,19 +112,19 @@ module.exports = (grunt) ->
         options:
           sourceMap: !@option 'nomaps'
         files: [{
-          expand: true,
-          cwd: '<%= site.source %>/coffee/',
-          src: '**/*.coffee',
-          dest: 'build/js/',
+          expand: true
+          cwd: '<%= site.source %>/coffee/'
+          src: '**/*.coffee'
+          dest: 'build/js/'
           ext: '.js'
         }]
 
       release:
         files: [{
-          expand: true,
-          cwd: '<%= site.source %>/coffee/',
-          src: '**/*.coffee',
-          dest: '.tmp/js/',
+          expand: true
+          cwd: '<%= site.source %>/coffee/'
+          src: '**/*.coffee'
+          dest: '.tmp/js/'
           ext: '.js'
         }]
 
@@ -110,8 +140,8 @@ module.exports = (grunt) ->
           name: '../../node_modules/almond/almond'
           include: 'main'
           out: 'release/js/jamie.js'
-          wrap: true,
-          findNestedDependencies: true,
+          wrap: true
+          findNestedDependencies: true
           optimize: if @option 'uncompressed' then 'none' else 'uglify2'
 
 
@@ -152,7 +182,7 @@ module.exports = (grunt) ->
           keepalive: true
           livereload: !@option 'release'
           middleware: (connect, options) -> [
-            pushState,
+            pushState
             connect.static options.base
           ]
 
@@ -163,7 +193,7 @@ module.exports = (grunt) ->
     watch:
 
       components:
-        files: 'bower_components/**/*.js',
+        files: 'bower_components/**/*.js'
         tasks: ['copy:build']
 
       less:
@@ -171,11 +201,11 @@ module.exports = (grunt) ->
         tasks: ['less:build']
 
       coffee:
-        files: '<%= site.source %>/coffee/**/*.coffee',
+        files: '<%= site.source %>/coffee/**/*.coffee'
         tasks: ['coffee:build', 'copy:build']
 
       index:
-        files: '<%= site.source %>/dev.html',
+        files: '<%= site.source %>/dev.html'
         tasks: ['replace:build']
 
       livereload:
@@ -201,10 +231,11 @@ module.exports = (grunt) ->
   @registerTask 'build', (target = 'build') ->
 
     list = [
-      'clean:' + target,
-      'copy:' + target,
-      'less:' + target,
-      'coffee:' + target,
+      'clean:' + target
+      'copy:' + target
+      'less:' + target
+      'coffee:' + target
+      'handlebars:' + target
       'replace:' + target
     ]
 
