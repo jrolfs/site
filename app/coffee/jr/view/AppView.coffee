@@ -29,4 +29,4 @@ define [
     #
 
     onViewChange: (model, view) ->
-      console.log 'view'
+      this.$el.html view.render().el

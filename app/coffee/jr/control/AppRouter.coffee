@@ -1,15 +1,22 @@
 define [
   'jr/model/AppModel'
   'jr/view/AppView'
+
+  'jr/view/WelcomeView'
 ],
 
-(AppModel, AppView) ->
+(AppModel, AppView, WelcomeView) ->
 
   class AppRouter extends Backbone.Router
 
     #
     # -------------------- Properties --------------------
     #
+
+    # Private
+
+    model = AppModel.instance()
+
 
     routes:
       '':       'index'
@@ -34,7 +41,7 @@ define [
     #
 
     index: ->
-      console.log 'index'
+      model.set 'view', new WelcomeView()
 
     about: ->
       console.log 'about'
