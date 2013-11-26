@@ -1,6 +1,5 @@
 sh =  require 'execSync'
 matchdep =  require 'matchdep'
-pushState = require('grunt-connect-pushstate/lib/utils').pushState
 
 
 module.exports = (grunt) ->
@@ -178,11 +177,12 @@ module.exports = (grunt) ->
       development:
         options:
           port: 8000
+          hostname: '*'
           base: if @option 'release' then 'release' else 'build'
           keepalive: true
           livereload: !@option 'release'
           middleware: (connect, options) -> [
-            pushState
+            require('grunt-connect-pushstate/lib/utils').pushState
             connect.static options.base
           ]
 
