@@ -1,4 +1,4 @@
-require.config config =
+require.config
 
   paths:
     'templates': '../templates'
@@ -23,5 +23,5 @@ require.config config =
     handlebars:
       exports: 'Handlebars'
 
-require Object.keys(config.shim), ->
-  require ['jr/App'], (app) -> do app.init
+  require ['jquery', 'underscore', 'backbone', 'handlebars'], ->
+      require ['jr/App'], (app) -> do app.init
