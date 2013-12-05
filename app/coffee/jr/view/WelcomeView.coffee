@@ -11,6 +11,8 @@ define [
     # -------------------- Properties --------------------
     #
 
+    className: 'welcome-view'
+
 
     #
     # -------------------- Control --------------------
@@ -18,6 +20,5 @@ define [
 
     render: ->
       this.$el.html template()
+      _.defer (-> this.$('.hello-container').addClass('slide'))
       this
-
-

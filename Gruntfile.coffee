@@ -97,7 +97,7 @@ module.exports = (grunt) ->
           expand: true
           cwd: 'app/templates/'
           src: '**/*.handlebars'
-          dest: '.tmp/templates/'
+          dest: '.tmp/templates'
           ext: '.handlebars.js'
         }]
 
