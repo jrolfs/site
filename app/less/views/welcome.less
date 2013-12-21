@@ -1,27 +1,33 @@
 
 .welcome-view {
-    text-align: center;
-    background: radial-gradient(ellipse 100% 50% at 50% 50%,  #f2f4f4 20%, #666 100%);
-    background-size: 100% 200%;
-    background-position: 0 -100%;
+  text-align: center;
+  background: radial-gradient(ellipse 100% 50% at 50% 50%,  #f2f4f4 20%, #666 100%);
+  background-size: 100% 200%;
+  background-position: 0 -100%;
+  .fullscreen;
+
+  .hello-container {
+    margin-top: -40px;
     .fullscreen;
-    .transition;
 
-    .hello-container {
-        margin-top: -40px;
-        .fullscreen;
+    h1 {
+      font-weight: normal;
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.15);
+      color: #555;
+      white-space: nowrap;
+      display: inline-block;
+      .transition(width 1s);
 
-        h1 {
-            font-weight: normal;
-            text-shadow: 1px 2px 4px rgba(0,0,0,0.15);
-            color: #555;
+      .who-am-i {
+        font-weight: bold;
+        color: #333;
 
-            .who-am-i {
-                font-weight: bold;
-                color: #333;
-            }
+        &.measure {
+          visibility: hidden;
         }
+      }
     }
+  }
 }
 
 
@@ -345,9 +351,9 @@
 }
 
 .welcome-view.slide .hello-container {
-  -webkit-animation: text-slide 3s forwards linear;
-  -moz-animation: text-slide 3s forwards linear;
-  animation: text-slide 3s forwards linear;
+  -webkit-animation: text-slide 4s forwards linear;
+  -moz-animation: text-slide 4s forwards linear;
+  animation: text-slide 4s forwards linear;
 }
 
 
@@ -666,7 +672,7 @@
 }
 
 .welcome-view.slide {
-  -webkit-animation: background-slide 4s forwards linear;
-  -moz-animation: background-slide 4s forwards linear;
-  animation: background-slide 4s forwards linear;
+  -webkit-animation: background-slide 5.5s forwards linear;
+  -moz-animation: background-slide 5.5s forwards linear;
+  animation: background-slide 5.5s forwards linear;
 }

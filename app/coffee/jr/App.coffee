@@ -1,5 +1,6 @@
 define [
-	'jr/control/AppRouter'
+  'jr/control/AppRouter'
+  'jr/control/init/FontInit'
 ],
 
 (AppRouter) ->
