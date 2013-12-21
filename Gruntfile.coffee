@@ -204,6 +204,10 @@ module.exports = (grunt) ->
         files: '<%= site.source %>/coffee/**/*.coffee'
         tasks: ['coffee:build', 'copy:build']
 
+      handlebars:
+        files: '<%= site.source %>/templates/**/*.handlebars'
+        tasks: ['handlebars:build']
+
       index:
         files: '<%= site.source %>/dev.html'
         tasks: ['replace:build']
