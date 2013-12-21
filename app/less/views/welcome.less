@@ -1,7 +1,7 @@
 
 .welcome-view {
     text-align: center;
-    background: radial-gradient(ellipse 100% 50% at 50% 50%,  #f2f4f4 20%, #999 100%);
+    background: radial-gradient(ellipse 100% 50% at 50% 50%,  #f2f4f4 20%, #666 100%);
     background-size: 100% 200%;
     background-position: 0 -100%;
     .fullscreen;
@@ -344,7 +344,7 @@
   100% {transform: translate3d(0%, 50%, 0);}
 }
 
-h1.slide {
+.welcome-view.slide .hello-container {
   -webkit-animation: text-slide 3s forwards linear;
   -moz-animation: text-slide 3s forwards linear;
   animation: text-slide 3s forwards linear;
@@ -665,8 +665,8 @@ h1.slide {
   100% {background-position: 0 -150%;}
 }
 
-div.slide {
-  -webkit-animation: background-slide 3s forwards linear;
-  -moz-animation: background-slide 3s forwards linear;
-  animation: background-slide 3s forwards linear;
+.welcome-view.slide {
+  -webkit-animation: background-slide 4s forwards linear;
+  -moz-animation: background-slide 4s forwards linear;
+  animation: background-slide 4s forwards linear;
 }

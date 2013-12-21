@@ -20,5 +20,5 @@ define [
 
     render: ->
       this.$el.html template()
-      _.delay (-> this.$('.hello-container').addClass('slide')), 500
+      _.delay (=> this.$el.addClass('slide')), 500
       this

@@ -1,4 +1,5 @@
-sh =  require 'execSync'
+require 'shelljs/global'
+
 matchdep =  require 'matchdep'
 
 
@@ -162,7 +163,7 @@ module.exports = (grunt) ->
             'version': '<%= pkg.version %>'
             'hash': do ->
               try
-                hash = sh.exec('git rev-parse --short --verify HEAD').stdout
+                hash = exec('git rev-parse --short --verify HEAD', { silent: true }).output
               catch error
                 @log.error error
                 @fatal 'Could not retrieve Git SHA hash blob'
@@ -251,6 +252,6 @@ module.exports = (grunt) ->
   @registerTask 'info', (target = 'release') ->
 
     grunt.log.subhead 'Build Info:'
-    grunt.log.oklns sh.exec('du -h -d 3 ' + target).stdout.replace(new RegExp(target + '\/', 'g'), '')
+    grunt.log.oklns exec('du -h -d 3 ' + target, { silent: true }).output.replace(new RegExp(target + '\/', 'g'), '')
 
 
