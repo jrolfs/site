@@ -181,10 +181,10 @@ module.exports = (grunt) ->
           base: if @option 'release' then 'release' else 'build'
           keepalive: true
           livereload: !@option 'release'
-          middleware: (connect, options) -> [
-            require('grunt-connect-pushstate/lib/utils').pushState
-            connect.static options.base
-          ]
+          # middleware: (connect, options) -> [
+          #   require('grunt-connect-pushstate/lib/utils').pushState
+          #   connect.static options.base
+          # ]
 
 
 
